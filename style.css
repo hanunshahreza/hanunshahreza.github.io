@@ -63,7 +63,8 @@ img {
     /* align-items: center; */
     flex-direction: column;
     background-image: url(https://wallpapercave.com/wp/RyOUx0H.jpg);
-    background-size: 100vw;
+    background-size: 100vw 100vh;
+    background-position: center;
     min-height: 400px;
     margin-bottom: 100px;
     clear: both;
@@ -136,12 +137,11 @@ img {
 .body{
     display: flex;
     flex-wrap: wrap;
-    /* font-family: 'Open Sans', sans-serif; */
-
 }
 
 #listProperty {
     min-height: 400px;
+    margin-top: 100px;
     margin-bottom: 100px;
     clear: both;
 }
