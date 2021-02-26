@@ -76,11 +76,17 @@ function clearCard() {
 
 function deleteProperty(event) {
     event.preventDefault()
-    const idx = Number(event.srcElement.attributes.value.value)
-    properties.splice(idx, 1)
-    console.log(properties)
+    const item = event.target;
+    if (item.classList[0] === "deleteButton"){
+        const jud = item.parentElement.querySelector(".judul").innerHTML
+        for(let n = 0 ; n < properties.length; n++){
+            if(jud===properties[n].judul)
+            properties.splice(n, 1)
+        }
+        // console.log(jud)
     clearCard()
     render(properties)
+    }
 
 }
 
@@ -100,7 +106,7 @@ function render (list){
         <span class="harga">${list[i].harga}</span><br>
         <span class="luas">${list[i].luasBangunan}</span><br>
         <input class="editButton" type="button" value="Edit">
-        <input type="button" value="Delete"></input>`
+        <input class="deleteButton"type="button" value="Delete"></input>`
         
         listProperty.append(property)
     }
