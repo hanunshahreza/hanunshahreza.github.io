@@ -242,3 +242,23 @@ function deleteProperty(event) {
     }
 
 }
+
+function search () {
+    let search = document.getElementById("search").value
+    let result = []
+    for (let i = 0; i < properties.length; i++) {
+        let tmp = ""
+        properties[i].lokasi += " "
+        for (let j = 0; j < properties[i].lokasi.length; j++) {
+            if (properties[i].lokasi[j] === " ") {
+                if (search.toLocaleLowerCase() === tmp.toLocaleLowerCase()) {
+                    result.push(properties[i])
+                }
+                tmp = ""
+            } else {
+                tmp += properties[i].lokasi[j]
+            }
+        }
+    }
+    render(result)
+}
